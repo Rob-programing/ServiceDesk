@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-12 mx-auto">
+            <div class="card card-signin flex-row my-5">
+                <div class="card-body">
+                    <div style="text-align: center;">
+                       <img src="../../../assets/avatar_logo.jpg" style="height: 200px; width: 250px;" alt="">
+                    </div>
+                    <form class="form-signin">
+                        <label class="spanlogin">Login</label>
+                        <div class="form-label-group">
+                            <input  name="email" type="email" id="inputEmail" class="form-control styleCamp" placeholder="Email" required>
+                        </div>
+
+                        <label class="spanlogin">Senha</label>
+                        <div class="form-label-group">
+                            <input name="password" type="password" id="inputPassword" class="form-control styleCamp" placeholder="Senha" required>
+                            <a routerLink="reset"  class="txt1">Esqueci a senha</a>
+                        </div>
+                        <!-- <div *ngIf="error" class="alert alert-danger" role="alert">
+                            Usuário ou senha inválidos
+                        </div> -->
+                        <div style="text-align: center">
+                            <button (click)="login()" class="btn btn-lg btn-primary btn-block text-uppercase">Entrar</button>
+                            <br>
+                            <br>
+                            <!-- <p>Logo</p> -->
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card-img-left d-none d-md-flex">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

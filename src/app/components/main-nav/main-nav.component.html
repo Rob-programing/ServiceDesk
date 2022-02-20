@@ -1,1 +1,111 @@
-<p>main-nav works!</p>
+<mat-sidenav-container class="sidenav-container" style="background-color: #efefef">
+    <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)  === false}" fixedInViewport="false"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        <mat-toolbar class="custom-toolbar">
+            <!-- <img src="../../assets/imgs/logo_somos_esporte_branco.png"
+                style="width: 150px;height: 50px; margin-left: 25px; margin-top: 20px;"> -->
+                
+
+            <p style="color: #efefef; font: 700;" class="text-nav">Central de Ajuda</p>
+            
+        </mat-toolbar>
+
+
+
+        <mat-nav-list *ngIf="mudandoTipo() == 'Administrador'">
+            <a mat-list-item href="meus-dados" *ngIf="(isHandset$ | async)" class="text-nav">Olá, {{ user }}</a>
+            <hr>
+            <a mat-list-item href="home-adm" class="text-nav">HOME</a>
+            <hr class="linha">
+            <a mat-list-item href="#" class="text-nav"> Clientes</a>
+            <a mat-list-item href="#" class="text-nav"> Usuarios</a>
+            <a mat-list-item href="#" class="text-nav"> Dashboard</a>
+
+
+
+            <div class="menu_footer">
+                <hr class="linha2">
+                <a mat-list-item href="#" class="text-nav"><span
+                        class="material-icons icones">help_outline</span>Central de Ajuda</a>
+                <a mat-list-item href="javascript:void(0);" (click)="logout()" class="text-nav"><span
+                        class="material-icons icones">logout</span>Sair</a>
+            </div>
+
+
+            <div class="menu_footer">
+                <hr class="linha2">
+                <a mat-list-item href="#" class="text-nav"><span
+                        class="material-icons icones">help_outline</span>Central de Ajuda</a>
+                <a mat-list-item href="javascript:void(0);" (click)="logout()" class="text-nav"><span
+                        class="material-icons icones">logout</span>Sair</a>
+            </div>
+        </mat-nav-list>
+
+
+
+        <mat-nav-list *ngIf="mudandoTipo() == 'Analista'" >
+            <a mat-list-item href="meus-dados" *ngIf="(isHandset$ | async)" class="text-nav">Olá, {{ user }}</a>
+            <hr>
+            <a mat-list-item href="#" class="text-nav">HOME</a>
+            <hr class="linha">
+            
+            <a mat-list-item (click)="showSubmenu = !showSubmenu"  class="text-nav">Meus atendimentos <mat-icon class="menu-button"  [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing" >expand_more</mat-icon></a>
+            
+            <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded" >
+                <a mat-list-item href="#" class="text-nav">Incidentes</a>
+                <a mat-list-item href="#" class="text-nav">Solicitações</a>
+            </div>
+
+            <a mat-list-item href="#" class="text-nav">Meus chamados</a>
+            <a mat-list-item href="#" class="text-nav">Todos os incidentes</a>
+            <a mat-list-item href="#" class="text-nav">Todos os solicitações</a>
+            <!-- <mat-list-item  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+            <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+                <a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a>
+            </div>
+            -->
+
+
+            <!-- <a mat-list-item href="#" class="text-nav">Dashboard</a> -->
+
+
+
+            <div class="menu_footer">
+                <hr class="linha2">
+                <a mat-list-item href="#" class="text-nav"><span
+                        class="material-icons icones">help_outline</span>Manual</a>
+                <a mat-list-item href="javascript:void(0);" (click)="logout()" class="text-nav"><span
+                        class="material-icons icones">logout</span>Sair</a>
+            </div>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="spacer">
+              <hr class="linha3">
+            </span>
+
+
+            <a class="text-menu" mat-list-item href="meus-dados" *ngIf="(isHandset$ | async) === false"><img
+                    [src]="imageToShow" *ngIf="!isImageLoading && face != null else noImageFound"
+                    style="width:15%;border-radius:50%;margin-left:8px;margin-right:8px;">Olá, {{ user }}</a>
+        </mat-toolbar>
+        <ng-content>
+        </ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #noImageFound>
+    <img src="../../../assets/avatar.png" style="width:15%;border-radius:50%;margin-left:8px;margin-right:8px;">
+</ng-template>
