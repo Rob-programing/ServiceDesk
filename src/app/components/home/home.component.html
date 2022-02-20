@@ -1,4 +1,87 @@
 <app-main-nav>
-    <p>home works!</p>
+
+
+    <!-- <div class="container-fluid">
+
+        <h1>Angular Bootstrap Carousel Example - ItSolutionStuff.com</h1>
+
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let image of images">
+                <div class="wrapper">
+                    <img [src]="image.src" alt="Random first slide">
+                </div>
+                <div class="carousel-caption">
+                    <h3>{{ image.title }}</h3>
+                    <p>{{ image.short }}</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+
+    </div> -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <a routerLink="#">
+                    <!-- ../chamados-->
+                    <div class="card" (mouseover)="atendimento=true" (mouseout)="atendimento=false">
+                        <h5 class="text" *ngIf="!atendimento">Atendimento </h5>
+                        <img src="../../../assets/central-de-atendimento.png" *ngIf="!atendimento"
+                            style="height: 150px;width: 150px; margin-left: 53px; margin-top: 20px;">
+                        <h5 class="corpo" *ngIf="atendimento">São solicitações/incidentes abertos por você</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a routerLink="#">
+                    <!-- ../chamados-->
+                    <div class="card" (mouseover)="chamados=true" (mouseout)="chamados=false">
+                        <h5 class="text" *ngIf="!chamados">Chamados </h5>
+                        <img src="../../../assets/simbolo-de-documentos.png" *ngIf="!chamados"
+                            style="height: 150px;width: 150px; margin-left: 53px; margin-top: 20px;">
+                        <h5 class="corpo" *ngIf="chamados">São chamados abertos por seu cliente</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a routerLink="#">
+                    <!-- ../chamados-->
+                    <div class="card" (mouseover)="incidentes=true" (mouseout)="incidentes=false">
+                        <h5 class="text" *ngIf="!incidentes">Todos incidentes </h5>
+                        <img src="../../../assets/socorro.png" *ngIf="!incidentes"
+                            style="height: 150px;width: 150px; margin-left: 53px; margin-top: 20px;">
+                        <h5 class="corpo" *ngIf="incidentes">São incidentes abertos por seu cliente</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a routerLink="#">
+                    <!-- ../chamados-->
+                    <div class="card" (mouseover)="solicitacoes=true" (mouseout)="solicitacoes=false">
+                        <h5 class="text" *ngIf="!solicitacoes">Todas solicitações </h5>
+                        <img src="../../../assets/aviso.png" *ngIf="!solicitacoes"
+                            style="height: 150px;width: 150px; margin-left: 53px; margin-top: 20px;">
+                        <h5 class="corpo" *ngIf="solicitacoes">São solicitações abertos por seu cliente</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a routerLink="#">
+                    <!-- ../chamados-->
+                    <div class="card" (mouseover)="settings=true" (mouseout)="settings=false">
+                        <h5 class="text" *ngIf="!settings">Configurações </h5>
+                        <img src="../../../assets/engrenagens.png" *ngIf="!settings"
+                            style="height: 150px;width: 150px; margin-left: 53px; margin-top: 20px;">
+                        <h5 class="corpo" *ngIf="settings">Configurações da sua conta</h5>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
 
 </app-main-nav>

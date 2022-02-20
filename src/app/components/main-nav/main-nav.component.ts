@@ -16,6 +16,7 @@ export class MainNavComponent  {
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = false;
   showSubmenu: boolean = false;
+  showSubmenu2: boolean = false;
   isShowing = true;
   
   // public entidade = this.localStorage.get('id_empresa')
