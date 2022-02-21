@@ -17,13 +17,17 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
+import { AnalistaChamadosComponent } from './components/analista-chamados/analista-chamados.component';
+import { AnalistaIncidentesComponent } from './components/analista-incidentes/analista-incidentes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainNavComponent,
-    HomeComponent
+    HomeComponent,
+    AnalistaChamadosComponent,
+    AnalistaIncidentesComponent
   ],
   imports: [
     BrowserModule,
