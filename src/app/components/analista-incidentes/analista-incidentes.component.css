@@ -1,0 +1,22 @@
+.search-list {
+    background: #fff;
+    border: 1px solid #ababab;
+    border-top: none;
+  }
+
+  .search-table {
+    background-color: #ffffff;
+    /* background-clip: border-box; */
+    border: 1px solid #e6e4e9;
+    margin-top: 20px;
+    padding: 20px;
+    width: auto;
+  }
+  table{
+      width: 100%;
+      font-family: Poppins;
+  }
+
+  .divSearch{
+      
+  }

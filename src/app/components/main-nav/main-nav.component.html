@@ -53,8 +53,8 @@
             <a mat-list-item (click)="showSubmenu = !showSubmenu"  class="text-nav">Meus atendimentos <mat-icon class="menu-button"  [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing" >expand_more</mat-icon></a>
             
             <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded" >
-                <a mat-list-item href="#" class="text-nav">Incidentes</a>
-                <a mat-list-item href="#" class="text-nav">Solicitações</a>
+                <a mat-list-item href="incidentes" class="text-nav">Incidentes</a>
+                <a mat-list-item href="solicitacoes" class="text-nav">Solicitações</a>
             </div>
 
             <a mat-list-item (click)="showSubmenu2 = !showSubmenu2"  class="text-nav">Meus chamados <mat-icon class="menu-button"  [ngClass]="{'rotated' : showSubmenu2}" *ngIf="isExpanded || isShowing" >expand_more</mat-icon></a>

@@ -1,3 +1,65 @@
 <app-main-nav>
-    <p>analista-chamados works!</p>
+    <div class="search-table">
+        <div class=" col-sm-4 col-md-2">
+            <div class="input-group mb-3 divSearch">
+                <input type="text" class="form-control searchCamp" placeholder="Procurar..." matInput>
+                <button type="button" class="btnFilter">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="col-sm-4 col-md-2">
+            <button type="button">
+                <mat-icon>search</mat-icon>Abrir um chamado
+
+            </button>
+        </div> -->
+
+
+        <div class="search-list">
+            <table mat-table #table [dataSource]="dataSource">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>Codigo do Chamado</th>
+                    <td mat-cell *matCellDef="let row">{{row.id}}</td>
+                </ng-container>
+                <ng-container matColumnDef="solicitante">
+                    <th mat-header-cell *matHeaderCellDef>Solicitante</th>
+                    <td mat-cell *matCellDef="let row">{{row.solicitante}}</td>
+                </ng-container>
+                <ng-container matColumnDef="cliente">
+                    <th mat-header-cell *matHeaderCellDef>Cliente</th>
+                    <td mat-cell *matCellDef="let row">{{row.cliente}}</td>
+                </ng-container>
+                <ng-container matColumnDef="categoria">
+                    <th mat-header-cell *matHeaderCellDef>Categoria</th>
+                    <td mat-cell *matCellDef="let row">{{row.categoria}}</td>
+                </ng-container>
+                <ng-container matColumnDef="solicitacoes">
+                    <th mat-header-cell *matHeaderCellDef>Solicitação</th>
+                    <td mat-cell *matCellDef="let row">{{row.solicitacoes}}</td>
+                </ng-container>
+                <ng-container matColumnDef="ambiente">
+                    <th mat-header-cell *matHeaderCellDef>Ambiente</th>
+                    <td mat-cell *matCellDef="let row">{{row.ambiente}}</td>
+                </ng-container>
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef="let row">{{row.status}}</td>
+                </ng-container>
+                <ng-container matColumnDef="prioridade">
+                    <th mat-header-cell *matHeaderCellDef>Prioridade</th>
+                    <td mat-cell *matCellDef="let row">{{row.prioridade}}</td>
+                </ng-container>
+                <ng-container matColumnDef="data">
+                    <th mat-header-cell *matHeaderCellDef>Data de Abertura</th>
+                    <td mat-cell *matCellDef="let row">{{row.data}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #paginator [pageIndex]="0" [pageSize]="pageSizes" [pageSizeOptions]="pageSizeOptions"
+                showFirstLastButtons hidePageSize></mat-paginator>
+        </div>
+    </div>
 </app-main-nav>
